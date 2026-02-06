@@ -1,0 +1,32 @@
+🌐 Implementação de VPN segura (WireGuard) & Integração Cloud
+📅 Data: 2026-02
+
+🖥️ Ambiente: Proxmox VE (Local) & Oracle Cloud Infrastructure (OCI)
+
+📌 Categoria: Redes / Conectividade Segura / Cloud Híbrida
+
+🧨 Problema
+Necessidade de estabelecer um túnel de comunicação seguro entre o Homelab local (Dell PowerEdge) e a instância na nuvem (Oracle Cloud) para 
+realizar backups e gestão remota. O tráfego não poderia transitar de forma exposta pela internet pública devido ao risco de interceptação de dados.
+
+🔍 Diagnóstico
+
+Latência e Processamento: Protocolos antigos (como IPsec) exigiriam muito processamento do hardware legado do servidor.
+Exposição de Portas: O firewall da Oracle precisava ser configurado para permitir apenas o tráfego criptografado da VPN, mantendo as demais portas fechadas.
+Roteamento: Era necessário garantir que a rede local (192.168.50.0/24) conseguisse "enxergar" a rede da nuvem sem conflitos.
+
+🛠️ Solução aplicada (Com assistência de IA)
+
+Escolha do Protocolo: Implementação do WireGuard pela sua eficiência em Linux e baixo consumo de recursos.
+Configuração de Pares (Peers): Gerenciamento de chaves públicas/privadas para autenticação mútua entre o firewall OpenWrt e a VM Ubuntu na Oracle.
+Firewall Cloud (OCI): Configuração de Security Lists na Oracle permitindo tráfego apenas na porta UDP específica do WireGuard.
+Túnel Criptografado: Estabelecimento do enlace seguro garantindo que todo o tráfego de gerenciamento trafegue de forma cifrada.
+Apoio Tecnológico: Utilização de Inteligência Artificial para a geração de scripts de configuração e Troubleshooting de roteamento entre as interfaces virtuais.
+
+✅ Resultado
+Conexão estável estabelecida entre o Homelab e a Oracle Cloud. Os arquivos agora são transferidos via túnel VPN com segurança total, e o ambiente cloud está 
+invisível para varredurasde portas externas, respondendo apenas ao túnel autorizado.
+
+📚 Lição aprendida
+A utilização de IA como assistente técnico permitiu reduzir o tempo de configuração e identificar erros de sintaxe rapidamente. Além disso, a arquitetura de
+Nuvem Híbrida reforça a importância de um firewall de borda (OpenWrt) bem configurado para servir como o "gateway" seguro da rede doméstica.
