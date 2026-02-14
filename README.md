@@ -53,4 +53,4 @@ O ambiente é dividido em camadas para simular uma infraestrutura real:
 - [ ] Migração de backups para Cloud Object Storage.
 
 ---
-*Documentação mantida como parte do processo de aprendizado contínuo em SysAdmin e DevOps.*
+*Documentação mantida como parte do processo de aprendizado contínuo em SysAdmin*
