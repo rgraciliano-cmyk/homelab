@@ -54,3 +54,4 @@ O ambiente é dividido em camadas para simular uma infraestrutura real:
 
 ---
 *Documentação mantida como parte do processo de aprendizado contínuo em SysAdmin*
+*Tive que dar uma pequena pausa para umas ferias e voltamos com tudo, todo conteudo sera atualizado semanalmente*
